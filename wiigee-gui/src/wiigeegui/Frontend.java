@@ -23,19 +23,6 @@
  */
 package wiigeegui;
 
-import org.wiigee.control.WiimoteWiigee;
-import org.wiigee.device.Wiimote;
-import org.wiigee.event.AccelerationEvent;
-import org.wiigee.event.ButtonPressedEvent;
-import org.wiigee.event.ButtonReleasedEvent;
-import org.wiigee.event.AccelerationListener;
-import org.wiigee.event.GestureEvent;
-import org.wiigee.event.GestureListener;
-import org.wiigee.event.InfraredEvent;
-import org.wiigee.event.MotionStartEvent;
-import org.wiigee.event.MotionStopEvent;
-import org.wiigee.event.RotationEvent;
-import org.wiigee.event.RotationSpeedEvent;
 import java.awt.Color;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -46,19 +33,28 @@ import java.io.IOException;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import javax.swing.filechooser.FileFilter;
+
+import org.wiigee.event.AccelerationEvent;
+import org.wiigee.event.AccelerationListener;
 import org.wiigee.event.ButtonListener;
-import org.wiigee.event.InfraredListener;
-import org.wiigee.event.RotationListener;
+import org.wiigee.event.ButtonPressedEvent;
+import org.wiigee.event.ButtonReleasedEvent;
+import org.wiigee.event.GestureEvent;
+import org.wiigee.event.GestureListener;
+import org.wiigee.event.MotionStartEvent;
+import org.wiigee.event.MotionStopEvent;
 import org.wiigee.filter.HighPassFilter;
-import org.wiigee.filter.RotationResetFilter;
-import org.wiigee.filter.RotationThresholdFilter;
 import org.wiigee.util.Log;
-import wiigeegui.Frontend;
-import wiigeegui.GraphPanel;
-import wiigeegui.InfraredPanel;
-import wiigeegui.OrientationPanel;
-import wiigeegui.WiimotePanel;
+import org.wiimote.control.WiimoteWiigee;
+import org.wiimote.device.Wiimote;
+import org.wiimote.event.InfraredEvent;
+import org.wiimote.event.InfraredListener;
+import org.wiimote.event.RotationEvent;
+import org.wiimote.event.RotationListener;
+import org.wiimote.event.RotationSpeedEvent;
+import org.wiimote.filter.RotationThresholdFilter;
 
 /**
  *

@@ -21,7 +21,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
-package org.wiigee.control;
+package org.wiimote.control;
 
 import java.io.IOException;
 import java.util.Vector;
@@ -32,8 +32,7 @@ import javax.bluetooth.RemoteDevice;
 import javax.bluetooth.ServiceRecord;
 
 import org.wiigee.util.Log;
-
-import org.wiigee.device.Wiimote;
+import org.wiimote.device.Wiimote;
 
 public class WiimoteDeviceDiscovery implements DiscoveryListener {
 

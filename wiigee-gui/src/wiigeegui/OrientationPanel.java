@@ -23,16 +23,19 @@
  */
 package wiigeegui;
 
-import com.sun.j3d.utils.geometry.ColorCube;
-import com.sun.j3d.utils.universe.SimpleUniverse;
 import java.awt.BorderLayout;
 import java.awt.GraphicsConfiguration;
+
 import javax.media.j3d.BranchGroup;
 import javax.media.j3d.Canvas3D;
 import javax.media.j3d.Transform3D;
 import javax.media.j3d.TransformGroup;
 import javax.swing.JPanel;
-import org.wiigee.event.RotationEvent;
+
+import org.wiimote.event.RotationEvent;
+
+import com.sun.j3d.utils.geometry.ColorCube;
+import com.sun.j3d.utils.universe.SimpleUniverse;
 
 /**
  *

@@ -22,7 +22,9 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-package org.wiigee.filter;
+package org.wiimote.filter;
+
+import org.wiigee.filter.Filter;
 
 /**
  * Removes rotation events which are for all axis

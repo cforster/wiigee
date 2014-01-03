@@ -21,7 +21,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
-package org.wiigee.control;
+package org.wiimote.control;
 
 import java.io.IOException;
 import java.util.Vector;
@@ -29,11 +29,12 @@ import java.util.Vector;
 import javax.bluetooth.DiscoveryAgent;
 import javax.bluetooth.LocalDevice;
 
-import org.wiigee.util.Log;
-import org.wiigee.device.Wiimote;
+import org.wiigee.control.Wiigee;
 import org.wiigee.event.AccelerationListener;
 import org.wiigee.event.GestureListener;
 import org.wiigee.filter.Filter;
+import org.wiigee.util.Log;
+import org.wiimote.device.Wiimote;
 
 // Singleton
 public class WiimoteWiigee extends Wiigee {

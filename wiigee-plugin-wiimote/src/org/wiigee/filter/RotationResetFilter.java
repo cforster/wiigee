@@ -21,10 +21,11 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
-package org.wiigee.filter;
+package org.wiimote.filter;
 
-import org.wiigee.device.Wiimote;
+import org.wiigee.filter.Filter;
 import org.wiigee.util.Log;
+import org.wiimote.device.Wiimote;
 
 /**
  * Removes rotation events which are for all axis

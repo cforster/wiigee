@@ -25,12 +25,14 @@ package wiigeegui;
 
 import java.awt.Color;
 import java.awt.Dimension;
-import javax.swing.JPanel;
 import java.awt.Graphics;
 import java.awt.Robot;
 import java.awt.Toolkit;
-import org.wiigee.event.InfraredEvent;
+
+import javax.swing.JPanel;
+
 import org.wiigee.util.Log;
+import org.wiimote.event.InfraredEvent;
 
 /**
  *

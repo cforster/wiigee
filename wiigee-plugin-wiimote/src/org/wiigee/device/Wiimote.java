@@ -21,16 +21,23 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
-package org.wiigee.device;
+package org.wiimote.device;
 
 import java.io.IOException;
 import java.util.Random;
 import java.util.Vector;
+
 import javax.bluetooth.L2CAPConnection;
 import javax.microedition.io.Connector;
-import org.wiigee.event.*;
+
+import org.wiigee.device.Device;
 import org.wiigee.filter.Filter;
 import org.wiigee.util.Log;
+import org.wiimote.event.InfraredEvent;
+import org.wiimote.event.InfraredListener;
+import org.wiimote.event.RotationEvent;
+import org.wiimote.event.RotationListener;
+import org.wiimote.event.RotationSpeedEvent;
 
 /**
  * This class represents the basic functions of the wiimote.

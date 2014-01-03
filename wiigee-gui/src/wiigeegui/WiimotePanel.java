@@ -23,13 +23,15 @@
  */
 package wiigeegui;
 
-import org.wiigee.device.Wiimote;
-import org.wiigee.event.ButtonPressedEvent;
-import org.wiigee.event.ButtonReleasedEvent;
 import java.awt.Graphics;
 import java.util.EventObject;
+
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
+
+import org.wiigee.event.ButtonPressedEvent;
+import org.wiigee.event.ButtonReleasedEvent;
+import org.wiimote.device.Wiimote;
 
 /**
  *
