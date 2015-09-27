@@ -29,6 +29,9 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.Button;
 
 /**
  * Device representation for Android Mobile Phones, like HTC Magic. Since
@@ -100,4 +103,49 @@ public class AndroidDevice extends Device implements SensorEventListener {
         // Nothing to do.
     }
 
+    @Override
+    public void setTrainButton(int b) {
+        throw new UnsupportedOperationException("Please call setTrainButton(Button b)");
+    }
+
+    public void setTrainButton(final Button button) {
+        super.setTrainButton(button.getId());
+        attachEventListeners(button);
+    }
+
+    @Override
+    public void setRecognitionButton(int b) {
+        throw new UnsupportedOperationException("Please call setTrainButton(Button b)");
+    }
+
+    public void setRecognitionButton(Button button) {
+        super.setRecognitionButton(button.getId());
+        attachEventListeners(button);
+    }
+
+    @Override
+    public void setCloseGestureButton(int b) {
+        throw new UnsupportedOperationException("Please call setTrainButton(Button b)");
+    }
+
+    public void setCloseGestureButton(Button button) {
+        super.setCloseGestureButton(button.getId());
+        attachEventListeners(button);
+    }
+
+    private void attachEventListeners(final Button button) {
+        button.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    fireButtonPressedEvent(button.getId());
+                    return true;
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    fireButtonReleasedEvent(button.getId());
+                    return true;
+                }
+                return false;
+            };
+        });
+    }
 }
