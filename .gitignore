@@ -1,1 +1,7 @@
 .DS*
+/wiigee-lib/nbproject/private/
+/wiigee-plugin-android/nbproject/private/
+/wiigee-lib/build/
+/wiigee-lib/dist/
+/wiigee-plugin-android/build/
+/wiigee-plugin-android/dist/

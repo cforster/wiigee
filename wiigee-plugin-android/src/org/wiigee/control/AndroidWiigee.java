@@ -23,6 +23,7 @@
  */
 package org.wiigee.control;
 
+import org.wiigee.util.AndroidLogger;
 import android.content.Context;
 import android.widget.Button;
 
@@ -56,6 +57,7 @@ public class AndroidWiigee extends Wiigee {
     
     public AndroidWiigee(Context context) {
         super();
+        Log.setLogger(new AndroidLogger());
         Log.write("This is wiigee-plugin-android (Andgee) version "+pluginversion+" ("+pluginreleasedate+")");
         device = new AndroidDevice(context);
         try {
