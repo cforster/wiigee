@@ -23,7 +23,6 @@
  */
 package org.wiigee.control;
 
-import org.wiigee.util.AndroidLogger;
 import android.content.Context;
 import android.widget.Button;
 
@@ -31,6 +30,7 @@ import org.wiigee.device.AndroidDevice;
 import org.wiigee.event.GestureListener;
 import org.wiigee.filter.Filter;
 import org.wiigee.util.Log;
+import org.wiigee.util.AndroidLogger;
 
 import java.io.IOException;
 
