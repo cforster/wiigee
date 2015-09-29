@@ -67,7 +67,8 @@ public class MainActivity extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int which) {
                                 String modelFilePath = files[which];
                                 // Wiigee appends .txt to model file paths, so strip it out here.
-                                androidWiigee.getDevice().loadGesture(modelFilePath.substring(0, modelFilePath.length() - 4));
+                                modelFilePath = getFilesDir() + "/" + modelFilePath.substring(0, modelFilePath.length() - 4);
+                                androidWiigee.getDevice().loadGesture(modelFilePath);
                                 Toast.makeText(MainActivity.this,
                                         "Gesture loaded: " + modelFilePath,
                                         Toast.LENGTH_SHORT).show();
