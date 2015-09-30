@@ -24,10 +24,15 @@
 package org.wiigee.control;
 
 import android.content.Context;
+import android.widget.Button;
+
 import org.wiigee.device.AndroidDevice;
 import org.wiigee.event.GestureListener;
 import org.wiigee.filter.Filter;
 import org.wiigee.util.Log;
+import org.wiigee.util.AndroidLogger;
+
+import java.io.IOException;
 
 /**
  * This is for using wiigee on Android Smartphones. This port has been
@@ -52,8 +57,14 @@ public class AndroidWiigee extends Wiigee {
     
     public AndroidWiigee(Context context) {
         super();
+        Log.setLogger(new AndroidLogger());
         Log.write("This is wiigee-plugin-android (Andgee) version "+pluginversion+" ("+pluginreleasedate+")");
         device = new AndroidDevice(context);
+        try {
+            device.setAccelerationEnabled(true);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void addGestureListener(GestureListener listener) {
@@ -69,14 +80,21 @@ public class AndroidWiigee extends Wiigee {
         return device;
     }
 
-
     /**
-     * Sets the Trainbutton for all wiimotes;
+     * Sets the Train button.
      *
-     * @param b Button encoding, see static Wiimote values
+     * @param button Android Button view
      */
-    public void setTrainButton(int b) {
-            device.setTrainButton(b);
+    public void setTrainButton(Button button) {
+        device.setTrainButton(button);
+    }
+
+    public void setRecognitionButton(Button button) {
+        device.setRecognitionButton(button);
+    }
+
+    public void setCloseGestureButton(Button button) {
+        device.setCloseGestureButton(button);
     }
 
     /**

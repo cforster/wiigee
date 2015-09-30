@@ -1,0 +1,3 @@
+This Android application uses the Gradle build system. This is not yet integrated with the Ant-based build system that the rest of wiigee uses.
+
+The Android GUI relies on having the most recent wiigee-lib and wiigee-plugin-android JARs in the app/libs directory. If you'd like to enhance these libraries and see them updated in the Android UI project, copy the JARs to app/libs after running "ant jar" in wiigee-lib and wiigee-plugin-android.
