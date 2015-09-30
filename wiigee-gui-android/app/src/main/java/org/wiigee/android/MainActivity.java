@@ -12,6 +12,7 @@ import android.widget.Toast;
 import org.wiigee.control.AndroidWiigee;
 import org.wiigee.event.GestureEvent;
 import org.wiigee.event.GestureListener;
+import org.wiigee.filter.HighPassFilter;
 
 import java.io.File;
 import java.io.FilenameFilter;
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                         (EditText) findViewById(R.id.editTextModelNumber)).getText().toString());
                 String modelName = ((EditText) findViewById(R.id.editTextFileName))
                         .getText().toString();
-                String modelFilePath = getFilesDir().getAbsolutePath() + "/" + modelName;
+                String modelFilePath = getExternalFilesDir(null).getAbsolutePath() + "/" + modelName;
                 androidWiigee.getDevice().saveGesture(modelNumber, modelFilePath);
                 Toast.makeText(MainActivity.this, "Gesture saved to " + modelName,
                         Toast.LENGTH_SHORT).show();
@@ -56,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                final String[] files = getFilesDir().list(new FilenameFilter() {
+                final String[] files = getExternalFilesDir(null).list(new FilenameFilter() {
                     @Override
                     public boolean accept(File dir, String filename) {
                         return filename.endsWith(".txt");
@@ -67,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int which) {
                                 String modelFilePath = files[which];
                                 // Wiigee appends .txt to model file paths, so strip it out here.
-                                modelFilePath = getFilesDir() + "/" + modelFilePath.substring(0, modelFilePath.length() - 4);
+                                modelFilePath = getExternalFilesDir(null) + "/" + modelFilePath.substring(0, modelFilePath.length() - 4);
                                 androidWiigee.getDevice().loadGesture(modelFilePath);
                                 Toast.makeText(MainActivity.this,
                                         "Gesture loaded: " + modelFilePath,
